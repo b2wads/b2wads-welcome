@@ -14,6 +14,12 @@ const WelcomeService = {
 
     const newB = {
       // Adicione propriedades aqui
+      name: 'Stephani Knupp da Silva',
+      age: 19,
+      food: 'Açaí',
+      isHungry: true,
+      skills: ['Node.Js', 'HTML', 'CSS'],
+      course: 'Ciência da Computação'
     }
 
     return newB
