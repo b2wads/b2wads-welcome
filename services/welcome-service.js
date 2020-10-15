@@ -13,7 +13,9 @@ const WelcomeService = {
      */
 
     const newB = {
-      // Adicione propriedades aqui
+      nome: "Nelson Antunes Laranjeira Neto",
+      gostaDe: ["programar", "estudar", "jogar", "CHURRAS"],
+      meta: "Dobrar a meta"
     }
 
     return newB
