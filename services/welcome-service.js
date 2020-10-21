@@ -13,7 +13,8 @@ const WelcomeService = {
      */
 
     const newB = {
-      // Adicione propriedades aqui
+      name: "Hugo Nogueira",
+      email: "hugo.nogueira@b2wdigital.com",
     }
 
     return newB
