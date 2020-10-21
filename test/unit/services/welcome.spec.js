@@ -11,6 +11,17 @@
  * Saiba mais em: https://jestjs.io/en/
  */
 
-it('should pass', () => {
-  expect(true).toBe(true)
+const WelcomeService = require("../../../services/welcome-service")
+
+
+describe("WelcomeService", () => {
+  describe("welcome()", () => {
+    it("should return { name: 'Hugo Nogueira', email: 'hugo.nogueira@b2wdigital.com' }", async () => {
+      const welcome = await WelcomeService.welcome()
+      expect(welcome).toMatchObject({
+        name: "Hugo Nogueira",
+        email: "hugo.nogueira@b2wdigital.com"
+      })
+    })
+  })
 })
