@@ -11,7 +11,25 @@
  * Utilizamos a biblioteca Jest para escrever nossos testes
  * Saiba mais em: https://jestjs.io/en/
  */
+const request = require("supertest")
 
-it('should pass', () => {
-  expect(true).toBe(true)
+const app = require("../../../app")
+
+describe("Welcome test", () => {
+  describe("GET /welcome", () => {
+    let res = undefined
+
+    beforeAll(async () => {
+      res = await request(app).get("/welcome")
+    })
+
+    it("should return 200", () => {
+      expect(res.status).toBe(200)
+    })
+
+    it("should return { name: 'Hugo Nogueira', email: 'hugo.nogueira@b2wdigital.com' }", () => {
+      expect(res.body).toHaveProperty("name", "Hugo Nogueira")
+      expect(res.body).toHaveProperty("email", "hugo.nogueira@b2wdigital.com")
+    })
+  })
 })
