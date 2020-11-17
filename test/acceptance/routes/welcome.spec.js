@@ -12,6 +12,28 @@
  * Saiba mais em: https://jestjs.io/en/
  */
 
-it('should pass', () => {
-  expect(true).toBe(true)
+ const request = require('supertest');
+ const app = require('../../../app');
+
+describe('GET /welcome', () => {
+
+  let welcomeData = undefined;
+
+  beforeAll(async () => {
+    welcomeData = await request(app).get('/welcome');
+  })
+
+  it('should be able to return status 200', () => {
+    expect(welcomeData.status).toBe(200);
+  
+  })
+
+  it('should be able to return object expected', () => {
+    expect(welcomeData.body).toEqual({
+      name : "Gabriel",
+      lastname : "Santos",
+      email: "gabriel.hssantos@b2wdigital.com",
+      age : 24
+    }) 
+  })
 })
