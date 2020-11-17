@@ -14,6 +14,10 @@ const WelcomeService = {
 
     const newB = {
       // Adicione propriedades aqui
+      name : "Gabriel",
+      lastname : "Santos",
+      email: "gabriel.hssantos@b2wdigital.com",
+      age : 24
     }
 
     return newB
